@@ -4,6 +4,7 @@ import Header from "./components/header"
 
 // Pages
 import Home from "./pages/home"
+import Search from "./pages/search"
 
 const App = () => (
   <div>
@@ -12,7 +13,7 @@ const App = () => (
         <Route exact path='/' component={Home}/>
         {/* <Route path='/book/:id' component={Book}/> */}
         {/* <Route path='/cart' component={Cart}/> */}
-        {/* <Route path='/search/:text' component={Search}/> */}
+        <Route path='/search/:text' component={Search}/>
       </Switch>
   </div>
 )
