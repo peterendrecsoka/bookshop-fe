@@ -2,6 +2,7 @@ import * as React from 'react'
 import { Link } from 'react-router-dom'
 import { getBookData } from "../../helpers/request"
 import Book from "../../components/book"
+import { getCart } from "../../helpers/cart"
 export default class Cart extends React.Component<{},{
   books: Array<JSX.Element>
 }>
@@ -12,9 +13,7 @@ export default class Cart extends React.Component<{},{
 
   componentWillMount() {
     
-    var storage = window.localStorage
-    var cart = storage.getItem("cart") || ""
-    var items = cart.split("|")
+    var items = getCart()
     
     items.forEach((bookId: string) => {
       getBookData(bookId)
@@ -30,14 +29,6 @@ export default class Cart extends React.Component<{},{
           })
         })
     })
-  }
-
-  onAdd = (bookId: string) => () => {
-      var storage = window.localStorage
-      var cart = storage.getItem("cart") || ""
-      var items = cart.split("|")
-      items.push(bookId)
-      storage.setItem("cart",items.join("|"))
   }
 
   render() {
