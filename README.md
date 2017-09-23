@@ -9,3 +9,7 @@ npm install
 ```
 npm run build
 ```
+
+## Demo page
+
+https://peterendrecsoka.github.io/bookshop-fe/
