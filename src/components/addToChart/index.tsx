@@ -8,6 +8,7 @@ export default class AddToChart extends React.Component<{
 {
     onAdd = (bookId: string) => () => {
         addChart(bookId)
+        this.forceUpdate()
     }
 
     render() {

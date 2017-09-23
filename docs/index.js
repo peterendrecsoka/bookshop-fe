@@ -12430,6 +12430,7 @@ var AddToChart = /** @class */ (function (_super) {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.onAdd = function (bookId) { return function () {
             cart_1.add(bookId);
+            _this.forceUpdate();
         }; };
         return _this;
     }
@@ -12488,7 +12489,7 @@ var react_dom_1 = __webpack_require__(129);
 var react_router_dom_1 = __webpack_require__(39);
 var app_1 = __webpack_require__(242);
 react_dom_1.render((React.createElement("div", null,
-    React.createElement(react_router_dom_1.BrowserRouter, null,
+    React.createElement(react_router_dom_1.BrowserRouter, { basename: "/bookshop-fe" },
         React.createElement(app_1.default, null)))), document.getElementById('root'));
 
 
