@@ -5,7 +5,7 @@ import App from "./app"
 
 render((
     <div>
-    <BrowserRouter>
+    <BrowserRouter basename="/bookshop-fe">
         <App />
     </BrowserRouter>
     </div>
