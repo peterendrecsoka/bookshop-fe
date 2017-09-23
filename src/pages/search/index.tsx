@@ -61,7 +61,7 @@ export default class Search extends React.Component<SearchProps,SearchState>
 
     if (this.state.books.items.length > 0) {
       this.state.books.items.map((book: iBook) => {
-        listOfBooks.push(<Book key={book.id} id={book.id} title={book.volumeInfo.title} image={book.volumeInfo.imageLinks.thumbnail} />)
+        listOfBooks.push(<Book col={4} key={book.id} id={book.id} title={book.volumeInfo.title} image={book.volumeInfo.imageLinks.thumbnail} />)
       })
     }
 
