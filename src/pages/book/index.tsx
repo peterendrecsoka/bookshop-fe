@@ -68,7 +68,7 @@ export default class Book extends React.Component<BookProps,BookState> {
           <div className="col-2">
             <img src={this.state.data.image} style={{width: "100%"}}/>
           </div>
-          <div className="col-10">{this.state.data.description}</div>
+          <div className="col-10" dangerouslySetInnerHTML={{ __html: this.state.data.description }} />
         </div>
         <div className="row">
           <div className="col">
