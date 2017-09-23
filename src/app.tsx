@@ -6,6 +6,7 @@ import Header from "./components/header"
 import Home from "./pages/home"
 import Search from "./pages/search"
 import Book from "./pages/book"
+import Cart from "./pages/cart"
 
 const App = () => (
   <div>
@@ -13,7 +14,7 @@ const App = () => (
       <Switch>
         <Route exact path='/' component={Home}/>
         <Route path='/book/:id' component={Book}/>
-        {/* <Route path='/cart' component={Cart}/> */}
+        <Route path='/cart' component={Cart}/>
         <Route path='/search/:text' component={Search}/>
       </Switch>
   </div>
