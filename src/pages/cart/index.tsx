@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { Link } from 'react-router-dom'
 import { getBookData } from "../../helpers/request"
-
+import Book from "../../components/book"
 export default class Cart extends React.Component<{},{
   books: Array<JSX.Element>
 }>
@@ -21,23 +21,15 @@ export default class Cart extends React.Component<{},{
         .then((response) => {
 
           var currentBooks = this.state.books
-          currentBooks.push(this.renderCartBook(response.data.volumeInfo.title, response.data.volumeInfo.imageLinks.small))
+          currentBooks.push(
+            <Book col={2} key={response.data.id} id={response.data.id} title={response.data.volumeInfo.title} image={response.data.volumeInfo.imageLinks.small} hideAddToChart={true}/>
+          )
 
           this.setState({
             books: currentBooks
           })
         })
     })
-  }
-
-  renderCartBook = (title: string, image: string) =>
-  {
-    return (
-      <div className="col-12" key={title}>
-        <img src={image} style={{width: "20px"}}/>
-        <b>{title}</b>
-      </div>
-    )
   }
 
   onAdd = (bookId: string) => () => {
